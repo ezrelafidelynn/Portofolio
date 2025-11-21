@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply text-white antialiased;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl;
+  }
+
+  .neon-border {
+    @apply border-2 border-transparent bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-blue bg-clip-border;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-blue bg-clip-text text-transparent;
+  }
+}
