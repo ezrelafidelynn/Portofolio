@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
-  const [filter, setFilter] = useState("all");
-
   const projectsData = [
     {
       title: "JobFlow",
@@ -88,47 +86,21 @@ const Projects = () => {
     },
   ];
 
-  const categories = [
-    { id: "all", label: "All Posts", icon: "📱" },
-    { id: "web", label: "Web Dev", icon: "💻" },
-    { id: "ar", label: "AR/VR", icon: "🥽" },
-  ];
-
-  const filteredProjects =
-    filter === "all"
-      ? projectsData
-      : projectsData.filter((p) => p.category === filter);
+  // Removed categories and filter logic
+  const filteredProjects = projectsData;
 
   return (
     <section className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
-        {/* Filter Tabs */}
+        {/* My Projects Heading */}
         <div className="flex justify-center mb-12">
-          <div className="glass-panel p-2 rounded-full">
-            <div className="flex space-x-2">
-              {categories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => setFilter(cat.id)}
-                  className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
-                    filter === cat.id
-                      ? "bg-gradient-to-r from-neon-purple to-neon-cyan text-white shadow-neon-purple"
-                      : "text-gray-400 hover:text-white hover:bg-white/10"
-                  }`}
-                >
-                  <span className="mr-2">{cat.icon}</span>
-                  {cat.label}
-                </button>
-              ))}
-            </div>
-          </div>
+          <h2 className="text-3xl font-bold text-gradient">My Projects</h2>
         </div>
-
         {/* Projects Feed */}
         <div className="space-y-8">
           {filteredProjects.map((project, index) => (
             <ProjectCard
-              key={`${project.title}-${filter}`}
+              key={project.title}
               {...project}
               delay={index * 100}
             />
