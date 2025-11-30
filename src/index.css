@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,20 +10,21 @@
   }
 
   body {
-    @apply text-white antialiased;
+    @apply text-white antialiased bg-black;
   }
 }
 
-@layer components {
-  .glass-panel {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl;
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 
-  .neon-border {
-    @apply border-2 border-transparent bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-blue bg-clip-border;
-  }
-
-  .text-gradient {
-    @apply bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-blue bg-clip-text text-transparent;
+  .font-instagram {
+    font-family: 'Lobster', cursive;
   }
 }

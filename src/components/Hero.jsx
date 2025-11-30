@@ -1,166 +1,158 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react'
 
 const Hero = () => {
-  const [likes, setLikes] = useState(247);
-  const [isLiked, setIsLiked] = useState(false);
-  const [followers, setFollowers] = useState(1337);
-  const [isFollowing, setIsFollowing] = useState(false);
-  const [currentStatus, setCurrentStatus] = useState(0);
-
-  const statusUpdates = [
-    "🚀 Building the future, one line of code at a time",
-    "💻 Full-Stack Developer crafting digital experiences",
-    "🌟 Turning coffee into code since 2020",
-    "⚡ Currently: Making the impossible possible",
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentStatus((prev) => (prev + 1) % statusUpdates.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleLike = () => {
-    setIsLiked(!isLiked);
-    setLikes((prev) => (isLiked ? prev - 1 : prev + 1));
-  };
-
-  const handleFollow = () => {
-    setIsFollowing(!isFollowing);
-    setFollowers((prev) => (isFollowing ? prev - 1 : prev + 1));
-  };
+  const [isFollowing, setIsFollowing] = useState(false)
+  const [activeTab, setActiveTab] = useState('posts')
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-20">
-      <div className="max-w-2xl mx-auto">
-        {/* Social Media Card */}
-        <div className="glass-panel p-8 transform hover:scale-105 transition-all duration-500">
-          {/* Header */}
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center space-x-4">
-              <div className="relative">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-blue p-1 shadow-glow">
-                  <img
-                    src="/profile.jpeg"
-                    alt="Ezrela Profile"
-                    className="w-full h-full rounded-full object-cover bg-gray-800"
-                    onError={(e) => {
-                      e.target.src =
-                        "https://via.placeholder.com/80x80/1f2937/ffffff?text=E";
-                    }}
-                  />
-                </div>
-                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-gray-900 animate-pulse"></div>
+    <section className="pt-16 pb-4 bg-black min-h-screen">
+      <div className="max-w-4xl mx-auto px-4">
+        {/* Profile Header */}
+        <div className="flex items-start gap-8 mb-8 pt-8">
+          {/* Profile Picture */}
+          <div className="flex-shrink-0">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-0.5">
+              <div className="w-full h-full rounded-full border-4 border-black overflow-hidden">
+                <img
+                  src="/profile.jpeg"
+                  alt="Ezrela"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.src = 'https://via.placeholder.com/160x160/1f2937/ffffff?text=E'
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Profile Info */}
+          <div className="flex-1">
+            <div className="flex items-center gap-4 mb-4">
+              <h2 className="text-xl font-light">ezrela_dev</h2>
+              <button
+                onClick={() => setIsFollowing(!isFollowing)}
+                className={`px-8 py-1.5 rounded-lg font-semibold text-sm transition-colors ${
+                  isFollowing
+                    ? 'bg-gray-800 hover:bg-gray-700 text-white'
+                    : 'bg-blue-500 hover:bg-blue-600 text-white'
+                }`}
+              >
+                {isFollowing ? 'Following' : 'Follow'}
+              </button>
+              <button className="text-white">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Stats */}
+            <div className="flex gap-8 mb-4">
+              <div>
+                <span className="font-semibold">42</span> posts
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gradient">Ezrela</h1>
-                <p className="text-gray-400">@ezrela_dev</p>
-                <p className="text-sm text-neon-cyan">Full-Stack Developer</p>
+                <span className="font-semibold">1,337</span> followers
+              </div>
+              <div>
+                <span className="font-semibold">420</span> following
               </div>
             </div>
+
+            {/* Bio */}
+            <div className="text-sm">
+              <p className="font-semibold">Ezrela</p>
+              <p className="text-gray-300">Full-Stack Developer</p>
+              <p className="text-gray-300 mt-1">
+                💻 Building amazing web experiences<br />
+                🚀 React • Node.js • Mixed Reality<br />
+                ☕ Turning coffee into code
+              </p>
+              <a href="mailto:ezre252@gmail.com" className="text-blue-500 mt-1 inline-block">
+                ezre252@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Highlights/Stories (empty circles for now) */}
+        <div className="flex gap-12 overflow-x-auto pb-4 mb-4 scrollbar-hide">
+          <div className="flex flex-col items-center gap-1 flex-shrink-0">
+            <div className="w-20 h-20 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center">
+              <span className="text-3xl">💼</span>
+            </div>
+            <span className="text-xs text-gray-400">Projects</span>
+          </div>
+          <div className="flex flex-col items-center gap-1 flex-shrink-0">
+            <div className="w-20 h-20 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center">
+              <span className="text-3xl">🎨</span>
+            </div>
+            <span className="text-xs text-gray-400">Design</span>
+          </div>
+          <div className="flex flex-col items-center gap-1 flex-shrink-0">
+            <div className="w-20 h-20 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center">
+              <span className="text-3xl">💻</span>
+            </div>
+            <span className="text-xs text-gray-400">Code</span>
+          </div>
+          <div className="flex flex-col items-center gap-1 flex-shrink-0">
+            <div className="w-20 h-20 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center">
+              <span className="text-3xl">🎓</span>
+            </div>
+            <span className="text-xs text-gray-400">Learning</span>
+          </div>
+        </div>
+
+        {/* Tabs */}
+        <div className="border-t border-gray-800">
+          <div className="flex justify-around">
             <button
-              onClick={handleFollow}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isFollowing
-                  ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                  : "bg-gradient-to-r from-neon-purple to-neon-cyan text-white hover:shadow-neon-purple"
+              onClick={() => setActiveTab('posts')}
+              className={`flex-1 py-3 flex items-center justify-center gap-2 border-t-2 transition-colors ${
+                activeTab === 'posts'
+                  ? 'border-white text-white'
+                  : 'border-transparent text-gray-500'
               }`}
             >
-              {isFollowing ? "Following" : "Follow"}
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="13" y="3" width="7" height="7" />
+                <rect x="3" y="13" width="7" height="7" />
+                <rect x="13" y="13" width="7" height="7" />
+              </svg>
+              <span className="hidden md:inline text-xs font-semibold tracking-wide">POSTS</span>
             </button>
-          </div>
-
-          {/* Status Update */}
-          <div className="mb-6">
-            <p className="text-lg text-gray-200 leading-relaxed transition-all duration-1000">
-              {statusUpdates[currentStatus]}
-            </p>
-            <p className="text-sm text-gray-500 mt-2">2 hours ago</p>
-          </div>
-
-          {/* Stats */}
-          <div className="flex justify-between items-center mb-6 p-4 bg-black/20 rounded-xl">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-neon-purple">
-                {followers.toLocaleString()}
-              </div>
-              <div className="text-sm text-gray-400">Followers</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-neon-cyan">42</div>
-              <div className="text-sm text-gray-400">Projects</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-neon-blue">∞</div>
-              <div className="text-sm text-gray-400">Ideas</div>
-            </div>
-          </div>
-
-          {/* Interaction Buttons */}
-          <div className="flex justify-between items-center">
             <button
-              onClick={handleLike}
-              className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-110 ${
-                isLiked ? "text-red-500" : "text-gray-400 hover:text-red-400"
+              onClick={() => setActiveTab('saved')}
+              className={`flex-1 py-3 flex items-center justify-center gap-2 border-t-2 transition-colors ${
+                activeTab === 'saved'
+                  ? 'border-white text-white'
+                  : 'border-transparent text-gray-500'
               }`}
             >
-              <svg
-                className={`w-6 h-6 transition-transform duration-300 ${
-                  isLiked ? "scale-125" : ""
-                }`}
-                fill={isLiked ? "currentColor" : "none"}
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
               </svg>
-              <span className="font-semibold">{likes}</span>
+              <span className="hidden md:inline text-xs font-semibold tracking-wide">SAVED</span>
             </button>
-
-            <button className="flex items-center space-x-2 px-4 py-2 rounded-full text-gray-400 hover:text-neon-cyan transition-all duration-300 transform hover:scale-110">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                />
+            <button
+              onClick={() => setActiveTab('tagged')}
+              className={`flex-1 py-3 flex items-center justify-center gap-2 border-t-2 transition-colors ${
+                activeTab === 'tagged'
+                  ? 'border-white text-white'
+                  : 'border-transparent text-gray-500'
+              }`}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
-              <span className="font-semibold">Reply</span>
-            </button>
-
-            <button className="flex items-center space-x-2 px-4 py-2 rounded-full text-gray-400 hover:text-neon-purple transition-all duration-300 transform hover:scale-110">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
-                />
-              </svg>
-              <span className="font-semibold">Share</span>
+              <span className="hidden md:inline text-xs font-semibold tracking-wide">TAGGED</span>
             </button>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

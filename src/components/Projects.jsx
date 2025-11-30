@@ -1,109 +1,72 @@
-import React, { useState } from "react";
-import ProjectCard from "./ProjectCard";
+import React from 'react'
 
 const Projects = () => {
-  const [filter, setFilter] = useState("all");
-
-  const projectsData = [
+  const projects = [
     {
-      title: "Fynance",
-      description:
-        "Personal finance made simple! 💰 Created a clean, intuitive app to help people track their expenses and reach their financial goals. Money management doesn't have to be complicated! 📊",
-      image: "/Fynance.png",
-      link: "https://fynancetest.vercel.app",
-      category: "web",
-      tech: ["Next.js", "TypeScript", "PostgreSQL"],
+      id: 1,
+      title: 'Fynance',
+      image: '/Fynance.png',
       likes: 203,
-      comments: 31,
-      timeAgo: "1 month ago",
     },
     {
-      title: "EzNotes",
-      description:
-        "Just shipped my neon-themed note-taking app! 📝✨ Features CRUD operations, smooth animations, and a modern dark UI that's easy on the eyes. Perfect for developers who code late into the night! 🌙",
-      image: "/EzNotes.png",
-      link: null,
-      category: "web",
-      tech: ["React", "Node.js", "MongoDB"],
+      id: 2,
+      title: 'EzNotes',
+      image: '/EzNotes.png',
       likes: 89,
-      comments: 12,
-      timeAgo: "3 days ago",
     },
     {
-      title: "MixedAR",
-      description:
-        "Excited to share my latest Mixed Reality project! 🥽 Created an immersive cultural heritage experience with interactive VR museum scenes. Technology meets history in the most beautiful way! 🏛️",
-      image: "/MixedAR.jpeg",
-      link: null,
-      category: "ar",
-      tech: ["Unity", "C#", "AR Foundation"],
+      id: 3,
+      title: 'MixedAR',
+      image: '/MixedAR.jpeg',
       likes: 156,
-      comments: 23,
-      timeAgo: "1 week ago",
     },
     {
-      title: "EzChat",
-      description:
-        "Built a modern chat application with real-time messaging! 💬 Features a sleek dark UI, typing indicators, and smooth message animations. Communication has never looked this good! 🚀",
-      image: "/EzChat.png",
-      link: null,
-      category: "web",
-      tech: ["React", "Socket.io", "Express"],
+      id: 4,
+      title: 'EzChat',
+      image: '/EzChat.png',
       likes: 124,
-      comments: 18,
-      timeAgo: "2 weeks ago",
     },
-  ];
-
-  const categories = [
-    { id: "all", label: "All Posts", icon: "📱" },
-    { id: "web", label: "Web Dev", icon: "💻" },
-    { id: "ar", label: "AR/VR", icon: "🥽" },
-  ];
-
-  const filteredProjects =
-    filter === "all"
-      ? projectsData
-      : projectsData.filter((p) => p.category === filter);
+  ]
 
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        {/* Filter Tabs */}
-        <div className="flex justify-center mb-12">
-          <div className="glass-panel p-2 rounded-full">
-            <div className="flex space-x-2">
-              {categories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => setFilter(cat.id)}
-                  className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
-                    filter === cat.id
-                      ? "bg-gradient-to-r from-neon-purple to-neon-cyan text-white shadow-neon-purple"
-                      : "text-gray-400 hover:text-white hover:bg-white/10"
-                  }`}
-                >
-                  <span className="mr-2">{cat.icon}</span>
-                  {cat.label}
-                </button>
-              ))}
+    <section id="projects" className="bg-black text-white pb-16">
+      <div className="max-w-4xl mx-auto px-4">
+        {/* Instagram 3-column grid */}
+        <div className="grid grid-cols-3 gap-1">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="relative aspect-square bg-gray-900 overflow-hidden group cursor-pointer"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.src = 'https://via.placeholder.com/400x400/1f2937/ffffff?text=' + project.title
+                }}
+              />
+              {/* Hover overlay showing likes/comments like Instagram */}
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-6">
+                <div className="flex items-center gap-2 text-white font-semibold">
+                  <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                  <span>{project.likes}</span>
+                </div>
+                <div className="flex items-center gap-2 text-white font-semibold">
+                  <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                  </svg>
+                  <span>{Math.floor(project.likes / 3)}</span>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        {/* Projects Feed */}
-        <div className="space-y-8">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard
-              key={`${project.title}-${filter}`}
-              {...project}
-              delay={index * 100}
-            />
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
