@@ -10,7 +10,7 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black">
       {/* Navbar */}
       <Navbar />
-      
+
       {/* Background glow effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-purple/20 rounded-full blur-3xl"></div>
