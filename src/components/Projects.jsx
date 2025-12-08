@@ -92,10 +92,6 @@ const Projects = () => {
   return (
     <section className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
-        {/* My Projects Heading */}
-        <div className="flex justify-center mb-12">
-          <h2 className="text-3xl font-bold text-gradient">My Projects</h2>
-        </div>
         {/* Projects Feed */}
         <div className="space-y-8">
           {filteredProjects.map((project, index) => (

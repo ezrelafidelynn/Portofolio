@@ -8,7 +8,7 @@ const Hero = () => {
   const [activeTab, setActiveTab] = useState("posts");
 
   return (
-    <section className="pt-0 pb-0 bg-black min-h-screen">
+    <section className="pt-20 pb-0 bg-black min-h-screen">
       <div className="max-w-4xl mx-auto px-4">
         {/* Profile Header */}
         <div className="flex items-start gap-8 mb-8 pt-8">
