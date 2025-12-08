@@ -4,8 +4,9 @@ const ProjectCard = ({
   title,
   description,
   image,
+  video,
   link,
-  sourceCode,
+  github,
   tech = [],
   likes: initialLikes,
   comments,
@@ -16,6 +17,7 @@ const ProjectCard = ({
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [showComments, setShowComments] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   const handleLike = () => {
     setIsLiked(!isLiked);
@@ -25,9 +27,26 @@ const ProjectCard = ({
   const handleBookmark = () => {
     setIsBookmarked(!isBookmarked);
   };
+
+  const handleShowVideo = () => {
+    if (video) {
+      setShowVideo(true);
+    }
+  };
+
+  const handleHideVideo = () => {
+    setShowVideo(false);
+  };
+
+  const handleToggleVideo = () => {
+    if (video) {
+      setShowVideo((prev) => !prev);
+    }
+  };
+
   return (
     <div
-      className="glass-panel p-6 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-neon-purple"
+      className="glass-panel p-6 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-neon-purple animate-fadeIn"
       style={{ animationDelay: `${delay}ms` }}
     >
       {/* Header */}
@@ -43,6 +62,12 @@ const ProjectCard = ({
             <p className="text-sm text-gray-400">{timeAgo}</p>
           </div>
         </div>
+        {video && (
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+            <span className="text-xs text-red-500 font-medium">DEMO</span>
+          </div>
+        )}
         <button
           onClick={handleBookmark}
           className="text-gray-400 hover:text-neon-cyan transition-colors duration-300"
@@ -81,21 +106,45 @@ const ProjectCard = ({
         ))}
       </div>
 
-      {/* Image */}
-      <div className="relative overflow-hidden rounded-xl mb-4 group">
+      {/* Image/Video */}
+      <div
+        className="relative overflow-hidden rounded-xl mb-4 group cursor-pointer"
+        onMouseEnter={handleShowVideo}
+        onMouseLeave={handleHideVideo}
+        onClick={handleToggleVideo}
+        tabIndex={0}
+        role="button"
+        aria-label={
+          showVideo ? `Hide video for ${title}` : `Play video for ${title}`
+        }
+      >
         <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
-            onError={(e) => {
-              e.target.src =
-                "https://via.placeholder.com/400x225/1f2937/ffffff?text=" +
-                encodeURIComponent(title);
-            }}
-          />
+          {!showVideo || !video ? (
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+              onError={(e) => {
+                e.target.src =
+                  "https://via.placeholder.com/400x225/1f2937/ffffff?text=" +
+                  encodeURIComponent(title);
+              }}
+            />
+          ) : (
+            <video
+              src={video}
+              className="w-full h-full object-contain"
+              autoPlay
+              loop
+              muted
+              onError={(e) => {
+                console.error("Video failed to load:", e);
+                setShowVideo(false);
+              }}
+            />
+          )}
         </div>
-        {(link || sourceCode) && (
+        {(link || github) && (
           <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <div className="flex space-x-4">
               {link && (
@@ -108,9 +157,9 @@ const ProjectCard = ({
                   View Live Demo 🚀
                 </a>
               )}
-              {sourceCode && (
+              {github && (
                 <a
-                  href={sourceCode}
+                  href={github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-800 rounded-lg font-semibold text-white transform hover:scale-105 transition-transform duration-300 border border-gray-500"
