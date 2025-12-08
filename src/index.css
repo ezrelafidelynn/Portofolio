@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -19,12 +19,12 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
 
   .font-instagram {
-    font-family: 'Lobster', cursive;
+    font-family: "Lobster", cursive;
   }
 }

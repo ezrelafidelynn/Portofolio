@@ -5,6 +5,7 @@ const ProjectCard = ({
   description,
   image,
   link,
+  sourceCode,
   tech = [],
   likes: initialLikes,
   comments,
@@ -94,16 +95,30 @@ const ProjectCard = ({
             }}
           />
         </div>
-        {link && (
+        {(link || sourceCode) && (
           <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-gradient-to-r from-neon-purple to-neon-cyan rounded-lg font-semibold text-white transform hover:scale-105 transition-transform duration-300"
-            >
-              View Live Demo 🚀
-            </a>
+            <div className="flex space-x-4">
+              {link && (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 bg-gradient-to-r from-neon-purple to-neon-cyan rounded-lg font-semibold text-white transform hover:scale-105 transition-transform duration-300"
+                >
+                  View Live Demo 🚀
+                </a>
+              )}
+              {sourceCode && (
+                <a
+                  href={sourceCode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-800 rounded-lg font-semibold text-white transform hover:scale-105 transition-transform duration-300 border border-gray-500"
+                >
+                  View Source Code 📁
+                </a>
+              )}
+            </div>
           </div>
         )}
       </div>
