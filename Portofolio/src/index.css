@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { @apply box-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply antialiased text-white;
+    background-color: #000510;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* ── MacBook Mockup ────────────────────────────── */
+  .macbook {
+    @apply relative w-full select-none;
+  }
+  .macbook-lid {
+    background: #1a202c;
+    border-radius: 8px 8px 0 0;
+    padding: 10px 10px 0 10px;
+    position: relative;
+  }
+  .macbook-camera {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #2d3748;
+  }
+  .macbook-screen {
+    background: #000;
+    border-radius: 3px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+  }
+  .macbook-screen img,
+  .macbook-screen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .macbook-base {
+    height: 10px;
+    background: linear-gradient(to bottom, #a3acb1 0%, #8b9298 100%);
+    border-radius: 0 0 2px 2px;
+    position: relative;
+  }
+  .macbook-base::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 4px;
+    background: #636f76;
+    border-radius: 0 0 4px 4px;
+  }
+  .macbook-foot {
+    height: 3px;
+    background: #4a5568;
+    border-radius: 0 0 6px 6px;
+    margin: 0 5%;
+  }
+
+  /* ── Timeline ──────────────────────────────────── */
+  .timeline-line {
+    width: 1px;
+    background: rgba(255,255,255,0.2);
+    flex-shrink: 0;
+  }
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d1d1d6;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  /* ── Pill Buttons ──────────────────────────────── */
+  .btn-pink {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    background: #f472b6;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .btn-pink:hover {
+    background: #ec4899;
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #f9a8d4;
+    background: transparent;
+    border: 1px solid rgba(244,114,182,0.5);
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .btn-ghost:hover {
+    background: rgba(244,114,182,0.1);
+    border-color: #f472b6;
+    transform: translateY(-1px);
+  }
+
+  /* ── Category tabs ─────────────────────────────── */
+  .cat-tab {
+    @apply flex items-center gap-2 px-5 py-3 text-sm font-medium text-white/60 transition-all duration-200 relative cursor-pointer;
+    border: none;
+    background: none;
+  }
+  .cat-tab:hover { @apply text-white/90; }
+  .cat-tab.active {
+    @apply text-white;
+  }
+  .cat-tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #f472b6;
+    border-radius: 2px 2px 0 0;
+  }
+
+  /* ── Blob accent ───────────────────────────────── */
+  .blob-accent {
+    position: absolute;
+    width: 620px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(72, 68, 86, 0.55);
+    filter: blur(0px);
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Project card ──────────────────────────────── */
+  .project-card {
+    background: #0b1019;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 320px;
+  }
+
+  /* ── Cert card ─────────────────────────────────── */
+  .cert-card {
+    background: #12151c;
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
