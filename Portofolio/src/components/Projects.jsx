@@ -91,11 +91,23 @@ const projectsData = [
     title: "Automatic Curtain Slider",
     description:
       "Smart automated curtain system using IoT sensors and microcontrollers. Control your curtains remotely or automatically based on light conditions.",
-    image: null,
-    link: "https://drive.google.com/file/d/1IxKnc4m9l2Dq9m3ryig5BK3SPXJ1XU7T/view?usp=sharing",
+    image: "/iot.png",
+    link: "https://drive.google.com/file/d/1zZ-fMoWZ74OWtmfX6aCFgv9zL-gfu-om/view?usp=sharing",
     github: null,
     category: "iot",
     tech: ["Arduino", "IoT", "C++", "Sensors"],
+    timeAgo: "Recently",
+  },
+
+  {
+    title: "Curtain Slide System",
+    description:
+      "A second IoT-based curtain automation prototype with a compact control setup and smart sensing logic.",
+    image: "/iot1.png",
+    link: "https://drive.google.com/file/d/1zZ-fMoWZ74OWtmfX6aCFgv9zL-gfu-om/view?usp=sharing",
+    github: null,
+    category: "iot",
+    tech: ["Arduino", "IoT", "Sensors"],
     timeAgo: "Recently",
   },
 ];
