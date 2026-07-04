@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply text-white antialiased bg-black;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .font-instagram {
+    font-family: "Lobster", cursive;
+  }
+}
