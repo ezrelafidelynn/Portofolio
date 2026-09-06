@@ -5,6 +5,17 @@ const ALL_PROJECTS = [
   // ── Web Developer ──────────────────────────────────────────────
   {
     category: "web",
+    title: "Stockbit AI",
+    description: "A full-stack Stockbit clone with real-time candlestick charting, live orderbook, AI-powered report summarizer, robo-trading rule engine, and a paper-trading portfolio — all running on a custom WebSocket tick simulator and a local AI gateway.",
+    image: "/stockbit-ai.png",
+    fullImage: "/stockbit-ai-full.png",
+    video: null,
+    link: null,
+    github: "https://github.com/ezrelafidelynn/stockbit-ai-integrated-fs-web",
+    tech: ["Next.js 14", "TypeScript", "Socket.io", "PostgreSQL", "Prisma", "BullMQ", "Redis", "TradingView", "OpenAI SDK"],
+  },
+  {
+    category: "web",
     title: "JobFlow",
     description: "Job searching web using Vue.js and Laravel as its backend, styled with DaisyUI. Seamless job search experience with modern UI.",
     image: "/JobFlow.png",
