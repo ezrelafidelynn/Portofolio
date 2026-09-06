@@ -63,6 +63,17 @@ const ALL_PROJECTS = [
     github: "https://github.com/ezrelafidelynn/EzChat",
     tech: ["React.js", "Express.js", "Socket.io"],
   },
+  {
+    category: "web",
+    title: "Serpent Ledger",
+    description: "A single-file, zero-dependency personal finance tracker. Vanilla JS + hand-written CSS, localStorage persistence with versioned migrations, JSON import/export, and a from-scratch SVG radar chart. Percentage-of-income bucket budgeting with goal/pool tracking and calendar-aware recurring entries.",
+    image: "/serpent-ledger.png",
+    fullImage: "/serpent-ledger-full.png",
+    video: null,
+    link: null,
+    github: "https://github.com/ezrelafidelynn/personal-finance-tracker",
+    tech: ["HTML5", "Vanilla JS", "CSS3", "SVG"],
+  },
 
   // ── Artificial Intelligence ─────────────────────────────────────
   {

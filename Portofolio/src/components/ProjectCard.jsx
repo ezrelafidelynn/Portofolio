@@ -1,7 +1,7 @@
 import React from "react";
 import MacBook from "./MacBook";
 
-const ProjectCard = ({ title, description, image, video, link, github, tech, demoLabel = "View Demo" }) => (
+const ProjectCard = ({ title, description, image, video, fullImage, link, github, tech, demoLabel = "View Demo" }) => (
   <div className="project-card mb-6">
     {/* Purple/pink blob accent behind the MacBook */}
     <div className="blob-accent" />
@@ -48,7 +48,7 @@ const ProjectCard = ({ title, description, image, video, link, github, tech, dem
 
     {/* Right: MacBook mockup */}
     <div className="relative z-10 flex-1 pr-8 py-6">
-      <MacBook image={image} video={video} title={title} />
+      <MacBook image={image} video={video} fullImage={fullImage} title={title} />
     </div>
   </div>
 );
