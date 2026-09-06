@@ -7,9 +7,9 @@ const TimelineEntry = ({ company, role, period }) => (
       <div className="timeline-line flex-1 mt-1" />
     </div>
     <div className="pb-4">
-      <p className="text-white text-sm font-semibold">{company}</p>
-      <p className="text-white/60 text-xs mt-0.5">{role}</p>
-      <p className="text-white/50 text-xs">{period}</p>
+      <p className="text-white text-base font-semibold">{company}</p>
+      <p className="text-white/60 text-sm mt-0.5">{role}</p>
+      <p className="text-white/50 text-sm">{period}</p>
     </div>
   </div>
 );
@@ -27,10 +27,10 @@ const EducationExperience = () => (
             <div className="timeline-dot" />
           </div>
           <div>
-            <p className="text-white text-sm font-semibold">BINUS University</p>
-            <p className="text-white/60 text-xs mt-0.5">Major : Computer Science</p>
-            <p className="text-white/60 text-xs">Year : 2023-2027</p>
-            <p className="text-white/60 text-xs">GPA: 3.89</p>
+            <p className="text-white text-base font-semibold">BINUS University</p>
+            <p className="text-white/60 text-sm mt-0.5">Major : Computer Science</p>
+            <p className="text-white/60 text-sm">Year : 2023-2027</p>
+            <p className="text-white/60 text-sm">GPA: 3.89</p>
           </div>
         </div>
       </div>
