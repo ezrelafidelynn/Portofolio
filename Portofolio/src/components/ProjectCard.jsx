@@ -18,9 +18,12 @@ const ProjectCard = ({ title, description, image, video, fullImage, link, github
 
       {/* Tech stack */}
       {tech && tech.length > 0 && (
-        <div className="flex flex-wrap gap-x-4 gap-y-1 mb-6">
+        <div className="flex flex-wrap gap-x-3 gap-y-1.5 mb-6">
           {tech.map((t) => (
-            <span key={t} className="text-tag-text text-xs">{t}</span>
+            <span
+              key={t}
+              className="text-pink-primary font-mono text-[11px] tracking-wide uppercase"
+            >{t}</span>
           ))}
         </div>
       )}
