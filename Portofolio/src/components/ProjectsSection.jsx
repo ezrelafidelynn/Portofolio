@@ -16,6 +16,17 @@ const ALL_PROJECTS = [
   },
   {
     category: "web",
+    title: "CatOS",
+    description: "A cozy productivity desktop experience. Click to watch the demo.",
+    image: "/CatOS - a cozy productivity desktop display.png",
+    video: "/CatOS - a cozy productivity desktop demo recording.mp4",
+    fullImage: null,
+    link: null,
+    github: null,
+    tech: [],
+  },
+  {
+    category: "web",
     title: "Serpent Ledger",
     description: "A single-file, zero-dependency personal finance tracker. Vanilla JS + hand-written CSS, localStorage persistence with versioned migrations, JSON import/export, and a from-scratch SVG radar chart. Percentage-of-income bucket budgeting with goal/pool tracking and calendar-aware recurring entries.",
     image: "/serpent-ledger.png",
