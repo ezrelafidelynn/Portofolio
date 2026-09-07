@@ -8,7 +8,7 @@ const HeroSection = () => (
         <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-3">
           Ezrela Fidelynn<br />Surya Wibisana
         </h1>
-        <p className="text-white/70 text-lg font-light mb-8">Full-Stack Web Developer</p>
+        <p className="text-pink-primary text-lg font-semibold mb-8 tracking-wide">Full-Stack Web Developer</p>
         <div className="flex items-center gap-3 flex-wrap">
           <a
             href="https://drive.google.com/file/d/1KJ1PA-EzkzZqnLxwfkDX0C4M9ndYEUBV/view?usp=sharing"

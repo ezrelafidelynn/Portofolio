@@ -13,7 +13,7 @@ const ProjectCard = ({ title, description, image, video, fullImage, link, github
         className="w-2.5 h-2.5 rounded-full mb-6"
         style={{ background: "#d1d1d6" }}
       />
-      <h3 className="text-white font-bold text-2xl leading-snug mb-3">{title}</h3>
+      <h3 className="text-white font-extrabold text-3xl leading-snug mb-3">{title}</h3>
       <p className="text-white/55 text-sm leading-relaxed mb-4">{description}</p>
 
       {/* Tech stack */}
