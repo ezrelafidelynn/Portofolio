@@ -16,14 +16,14 @@ const ALL_PROJECTS = [
   },
   {
     category: "web",
-    title: "CatOS",
-    description: "A cozy productivity desktop experience. Click to watch the demo.",
+    title: "CatProductive",
+    description: "A cozy cat-themed productivity desktop — window manager, doodle canvas, lo-fi ambience via Web Audio API, markdown notes, calendar with drag-and-drop tasks, and 5 switchable themes. Zero UI dependencies; everything hand-rolled. AI chat proxy via a local OmniRoute gateway. Click to watch the demo.",
     image: "/CatOS - a cozy productivity desktop display.png",
     video: "/CatOS - a cozy productivity desktop demo recording.mp4",
     fullImage: null,
     link: null,
-    github: null,
-    tech: [],
+    github: "https://github.com/ezrelafidelynn/CatProductive",
+    tech: ["React 19", "Vite 6", "Express 4", "MongoDB", "Web Audio API", "Canvas 2D", "LocalStorage"],
   },
   {
     category: "web",
@@ -85,16 +85,6 @@ const ALL_PROJECTS = [
     link: null,
     github: "https://github.com/ezrelafidelynn/EzChat",
     tech: ["React.js", "Express.js", "Socket.io"],
-  },
-  {
-    category: "web",
-    title: "EzNotes",
-    description: "Neon-themed note-taking app! Features CRUD operations, smooth animations, and a modern dark UI that's easy on the eyes. Perfect for developers who code late into the night! 🌙",
-    image: "/EzNotes.png",
-    video: null,
-    link: null,
-    github: "https://github.com/ezrelafidelynn/EzNotes",
-    tech: ["React.js", "Node.js", "MongoDB"],
   },
 
   // ── Artificial Intelligence ─────────────────────────────────────
