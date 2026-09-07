@@ -55,7 +55,7 @@ const ALL_PROJECTS = [
     fullImage: null,
     video: "/serpent-ledger-demo.mp4",
     link: null,
-    github: "https://github.com/ezrelafidelynn/personal-finance-tracker",
+    github: null,
     tech: ["HTML5", "Vanilla JS", "CSS3", "SVG"],
   },
   {
