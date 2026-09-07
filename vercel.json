@@ -1,5 +1,5 @@
 {
   "buildCommand": "cd Portofolio && npm install && npm run build",
   "outputDirectory": "Portofolio/dist",
-  "installCommand": "echo skip"
+  "framework": null
 }
