@@ -46,7 +46,7 @@ const EducationExperience = () => (
         <TimelineEntry
           company="GreyDx.AI"
           role="Back End Developer"
-          period="August 2025 - November 2026"
+          period="August 2025 - November 2025"
         />
       </div>
     </div>
