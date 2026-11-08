@@ -6,7 +6,7 @@ const ALL_PROJECTS = [
   {
     category: "web",
     title: "Stockbit AI",
-    description: "A full-stack Stockbit clone with real-time candlestick charting, live orderbook, AI-powered report summarizer, robo-trading rule engine, and a paper-trading portfolio — all running on a custom WebSocket tick simulator and a local AI gateway.",
+    description: "A full-stack Stockbit clone with real-time candlestick charting, live orderbook, AI-powered report summarizer, robo-trading rule engine, and a paper-trading portfolio. All running on a custom WebSocket tick simulator and a local AI gateway.",
     image: "/stockbit-ai.png",
     fullImage: null,
     video: "/stockbit-ai-demo.mp4",
@@ -17,7 +17,7 @@ const ALL_PROJECTS = [
   {
     category: "web",
     title: "EzGram",
-    description: "A full-stack Instagram clone with realtime chat, live notifications, online presence, image uploads, 32 DaisyUI themes, and a complete social feed — built on a MERN + Socket.IO monorepo with JWT-cookie auth.",
+    description: "A full-stack Instagram clone with realtime chat, live notifications, online presence, image uploads, 32 DaisyUI themes, and a complete social feed. Built on a MERN + Socket.IO monorepo with JWT-cookie auth.",
     image: "/ezgramdashboard.png",
     video: "/ezgramdemo.mp4",
     fullImage: null,
@@ -28,7 +28,7 @@ const ALL_PROJECTS = [
   {
     category: "web",
     title: "EzMatch",
-    description: "A dating app with a shared drawing canvas, real-time match notifications, collaborative doodle profiles, voice doodles via MediaRecorder, a card-swipe discover flow, and in-app chat — all on a MERN + Socket.IO stack with 6 custom notebook themes.",
+    description: "A dating app with a shared drawing canvas, real-time match notifications, collaborative doodle profiles, voice doodles via MediaRecorder, a card-swipe discover flow, and in-app chat. All on a MERN + Socket.IO stack with 6 custom notebook themes.",
     image: "/dateMe-full.png",
     video: "/EzMatch-demo.mp4",
     fullImage: null,
@@ -39,7 +39,7 @@ const ALL_PROJECTS = [
   {
     category: "web",
     title: "CatProductive",
-    description: "A cozy cat-themed productivity desktop — window manager, doodle canvas, lo-fi ambience via Web Audio API, markdown notes, calendar with drag-and-drop tasks, and 5 switchable themes. Zero UI dependencies; everything hand-rolled. AI chat proxy via a local OmniRoute gateway. Click to watch the demo.",
+    description: "A cozy cat-themed productivity desktop with a window manager, doodle canvas, lo-fi ambience via Web Audio API, markdown notes, calendar with drag-and-drop tasks, and 5 switchable themes. Zero UI dependencies, everything hand-rolled. AI chat proxy via a local OmniRoute gateway.",
     image: "/CatOS - a cozy productivity desktop display.png",
     video: "/CatOS - a cozy productivity desktop demo recording.mp4",
     fullImage: null,
@@ -124,7 +124,7 @@ const ALL_PROJECTS = [
   {
     category: "ai",
     title: "Aegis Weather",
-    description: "Real-time threat intelligence platform — AI-driven alert triage correlates live CAP 1.2 feeds, earthquake sensors, and air-quality data to surface life-safety warnings. Geospatial PostGIS queries determine impact radius; a local AI gateway enriches severity scoring.",
+    description: "Real-time threat intelligence platform. AI-driven alert triage correlates live CAP 1.2 feeds, earthquake sensors, and air-quality data to surface life-safety warnings. Geospatial PostGIS queries determine impact radius and a local AI gateway enriches severity scoring.",
     image: "/aegisdashboard.gif",
     video: "/aegisdemo.mp4",
     fullImage: null,
@@ -146,7 +146,7 @@ const ALL_PROJECTS = [
   {
     category: "ai",
     title: "CatProductive",
-    description: "Cozy productivity desktop with a built-in AI chat assistant powered by a local OmniRoute gateway (OpenAI-compatible, model: auto). Chat lives inside a draggable window alongside the doodle canvas, lo-fi ambience, markdown notes, and calendar — all offline-first via localStorage.",
+    description: "Cozy productivity desktop with a built-in AI chat assistant powered by a local OmniRoute gateway (OpenAI-compatible, model: auto). Chat lives inside a draggable window alongside the doodle canvas, lo-fi ambience, markdown notes, and calendar. All offline-first via localStorage.",
     image: "/CatOS - a cozy productivity desktop display.png",
     video: "/CatOS - a cozy productivity desktop demo recording.mp4",
     fullImage: null,

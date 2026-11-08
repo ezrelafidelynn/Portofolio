@@ -12,7 +12,7 @@ const HeroSection = () => (
           Ezrela Fidelynn<br />Surya Wibisana
         </h1>
         <p className="text-white/60 text-base leading-relaxed mb-8 max-w-lg">
-          I build real-time web applications, AI-integrated platforms, and IoT systems — from interactive dashboards to full-stack monorepos. Specializing in React, Next.js, Node.js, and TypeScript.
+          I build real-time web applications, AI-integrated platforms, and IoT systems. From interactive dashboards to full-stack monorepos, specializing in React, Next.js, Node.js, and TypeScript.
         </p>
         <div className="flex items-center gap-3 flex-wrap">
           <a
