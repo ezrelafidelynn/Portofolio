@@ -16,15 +16,21 @@ const Navbar = () => {
           Ezrela
         </span>
         <div className="flex items-center gap-8">
-          <button onClick={() => scrollTo("hero")} className="text-white/80 hover:text-white text-sm transition-colors">
+          <button onClick={() => scrollTo("hero")} className="text-white/60 hover:text-white text-sm transition-colors hover:text-pink-primary">
             Profile
           </button>
-          <button onClick={() => scrollTo("projects")} className="text-white/80 hover:text-white text-sm transition-colors">
+          <button onClick={() => scrollTo("projects")} className="text-white/60 hover:text-pink-primary text-sm transition-colors">
             Projects
           </button>
-          <button onClick={() => scrollTo("certifications")} className="text-white/80 hover:text-white text-sm transition-colors">
+          <button onClick={() => scrollTo("certifications")} className="text-white/60 hover:text-pink-primary text-sm transition-colors">
             Certifications
           </button>
+          <a
+            href="mailto:ezre252@gmail.com"
+            className="btn-pink text-xs py-2 px-4"
+          >
+            Contact
+          </a>
         </div>
       </div>
     </nav>

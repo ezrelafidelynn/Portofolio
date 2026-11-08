@@ -170,6 +170,12 @@
     display: flex;
     align-items: center;
     min-height: 320px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .project-card:hover {
+    border-color: rgba(244,114,182,0.2);
+    transform: translateY(-2px);
   }
 
   /* ── Cert card ─────────────────────────────────── */

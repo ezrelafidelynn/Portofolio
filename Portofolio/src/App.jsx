@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
+import SkillsSection from "./components/SkillsSection";
 import EducationExperience from "./components/EducationExperience";
 import ProjectsSection from "./components/ProjectsSection";
 import Certifications from "./components/Certifications";
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <main>
         <HeroSection />
+        <SkillsSection />
         <EducationExperience />
         <ProjectsSection activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
         <Certifications />
